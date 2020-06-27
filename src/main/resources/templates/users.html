@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>User</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<h2>User
+				<a th:href="@{'/createCSV'}" style="float: right;"><img
+						th:src="@{/images/csv.jpg}" style="width: 40px;" /></a> 
+					<a th:href="@{'/createJSON'}" style="float: right;"><img
+						th:src="@{/images/json.png}" style="width: 45px; margin-left:10px;" /></a>
+				</h2>
+									
+				<div style="margin-top: 12px;">
+					<table class="table table-bordered">
+						<thead class="thead-light">
+							<tr>
+								<th>First Name</th>
+								<th>Last Name</th>
+								<th>Email</th>
+								<th>Phone Number</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="user: ${users}">
+								<td th:text=${user.firstName}></td>
+								<td th:text=${user.lastName}></td>
+								<td th:text=${user.email}></td>
+								<td th:text=${user.phoneNumber}></td>				
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/2.3.1/jquery.min.js"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
